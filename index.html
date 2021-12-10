@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Instrument Store</h1>
+    <!--    <p>Simplified 'add to cart' functionality. Uses Javascript-->
+    <!--        and WebStorage API/Cookies to remember cart data converted to JSON format.</p>-->
+    <!--    <p>Click 'Empty Cart' button to remove session cookies from browser.</p>-->
+    <div id="alerts"></div>
+    <div class="productcont">
+        <div class="product">
+            <h3 class="productname">AERODYNE JAZZ BASS</h3>
+            <img src="https://media.sweetwater.com/api/i/f-webp__q-82__ha-454c68624d5366ea__hmac-588cddf59fc20aecd6b53b170b1aa083f5e27835/images/items/750/JBassAero-large.jpg.auto.webp"
+                 width="200"
+                 height="300"></img>
+            <p>Type: Bass
+                <br>
+                Brand: Fender</p>
+            <p class="price">$824.99</p>
+            <button class="addtocart">Add To Cart</button>
+        </div>
+
+        <div class="product2">
+            <h3 class="productname">Electronic Drum Set</h3>
+            <img src="https://media.sweetwater.com/api/i/f-webp__q-82__ha-692250131c16d0b6__hmac-874c9f8df63a5f4c4b0243a51f0a97e7a3820b32/images/items/750/DTX6K3-large.jpg.auto.webp"
+                 width="200"
+                 height="300"></img>
+            <p>Type: Drum
+                <br>
+                Brand: Yamaha</p>
+            <p class="price">$1,899.99</p>
+            <button class="addtocart">Add To Cart</button>
+        </div>
+
+        <div class="product3">
+            <h3 class="productname">The Australian' Acoustic Electric</h3>
+            <img src="https://images.reverb.com/image/upload/s--MX8aaNcd--/f_auto,t_supersize/v1491276539/q4sjukgfkp96hnfi5yvw.jpg"
+                 width="200"
+                 height="300"></img>
+            <p>Type: Electric Acoustic Guitar
+                <br>
+                Brand: Maton</p>
+            <p class="price">$2,165.97</p>
+            <button class="addtocart">Add To Cart</button>
+        </div>
+        <br>
+        <div class="product">
+            <h3 class="productname">SCREAMADELICA STRATOCASTER</h3>
+            <img src="https://americansongwriter.com/wp-content/uploads/2021/12/Fender-Stratocaster-0141063350_fen_ins_fbd_1_nr.jpg?w=786"
+                 width="200"
+                 height="300"></img>
+            <p>Type: Electric Guitar
+                <br>
+                Brand: Fender</p>
+            <p class="price">$1,049.99</p>
+            <button class="addtocart">Add To Cart</button>
+        </div>
+
+        <div class="product2">
+            <h3 class="productname">Intermediate Violin</h3>
+            <img src="https://media.sweetwater.com/api/i/f-webp__q-82__ha-105fda1e9877c693__hmac-8d7cb37b0dda17898b47ffee849f3307324010e9/images/items/750/YAV1044O-large.jpg.auto.webp"
+                 width="200"
+                 height="300"></img>
+            <p>Type: Violin
+                <br>
+                Brand: Yamaha</p>
+            <p class="price">$2,295.00</p>
+            <button class="addtocart">Add To Cart</button>
+        </div>
+
+        <div class="product3">
+            <h3 class="productname">Tommy Emmanuel Signature</h3>
+            <img src="https://images.reverb.com/image/upload/s--nXicCZJ1--/f_auto,t_supersize/v1637165393/qaxd9kh7jrruhndzj7qo.jpg"
+                 width="200"
+                 height="300" /></img>
+            <p>Type: Guitar
+                <br>
+                Brand: Maton</p>
+            <p class="price">$2,300</p>
+            <button class="addtocart">Add To Cart</button>
+        </div>
+    </div>
+    <div class="cart-container">
+        <h2>Cart</h2>
+        <table>
+            <thead>
+            <tr>
+                <th><strong>Product</strong></th>
+                <th><strong>Price</strong></th>
+            </tr>
+            </thead>
+            <tbody id="carttable">
+            </tbody>
+        </table>
+        <hr>
+        <table id="carttotals">
+            <tr>
+                <td><strong>Items</strong></td>
+                <td><strong>Total</strong></td>
+            </tr>
+            <tr>
+                <td>x <span id="itemsquantity">0</span></td>
+
+                <td>$<span id="total">0</span></td>
+            </tr></table>
+
+
+        <div class="cart-buttons">
+            <button id="emptycart">Empty Cart</button>
+            <!--            <button id="checkout">Checkout</button>-->
+        </div>
+    </div>
+    <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <h1>Instrument Info</h1>
+
+
+
+            <input class="fname" type="text" name="name" placeholder="Instrument Name">
+            <input type="text" name="name" placeholder="Instrument Type">
+            <input type="text" name="name" placeholder="Instrument Brand">
+            <input type="text" name="name" placeholder="Instrument Price">
+
+
+            <button v-on:click="submit" class="btn">ADD</button>
+
+        </form>
+    </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
